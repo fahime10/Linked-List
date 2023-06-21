@@ -25,3 +25,10 @@ console.log(list.find("item1"));
 console.log(list.find("test2"));
 console.log(list.find("test4"));
 console.log(list.toString());
+
+list.insertAt("test0", 0);
+list.insertAt("newTest", 3);
+console.log(list.toString());
+
+list.removeAt(1);
+console.log(list.toString());

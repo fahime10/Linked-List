@@ -71,6 +71,7 @@ export class LinkedList {
         }
 
         current.nextNode = null;
+        this.size--;
     }
 
     contains(value) {
@@ -122,5 +123,58 @@ export class LinkedList {
         string += " null ";
 
         return string;
+    }
+
+    insertAt(value, index) {
+        if (value === "" || index < 0 || index > this.size) {
+            return;
+        }
+
+        if (index === 0) {
+            this.prepend(value);
+            this.size++;
+            return;
+        }
+
+        let node = new Node(value);
+        let current = this.head;
+        let temp = current;
+        let count = 0;
+
+        while (count <= index) {
+            temp = current;
+            count++;
+
+            current = current.nextNode;
+        }
+
+        node.nextNode = current;
+        temp.nextNode = node;
+
+        this.size++;
+    }
+
+    removeAt(index) {
+        if (index < 0 || index > this.size) {
+            return;
+        }
+
+        let current = this.head;
+        let temp;
+        let count = 0;
+
+        if (index === 0) {
+            this.head = current.nextNode;
+        }
+
+        while (count < index) {
+            count++;
+            temp = current;
+            current = current.nextNode;
+        }
+
+        temp.nextNode = current.nextNode;
+
+        this.size--;
     }
 }
