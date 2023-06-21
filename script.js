@@ -10,7 +10,18 @@ list.append("test5");
 
 list.prepend("item1");
 
+list.pop();
+
 console.log(list);
 console.log("Size is " + list.getSize());
 console.log("Head is " + list.getHead());
 console.log("Tail is " + list.getTail());
+console.log("Index 3: " + list.at(3));
+console.log("Contains test2? " + list.contains("test2"));
+console.log("Contains test7? " + list.contains("test7"));
+
+console.log(list);
+console.log(list.find("item1"));
+console.log(list.find("test2"));
+console.log(list.find("test4"));
+console.log(list.toString());
